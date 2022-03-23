@@ -23,5 +23,5 @@ dependencyResolutionManagement {
 
     }
 }
-rootProject.name = "Map Application"
+rootProject.name = "Currency Application"
 include ':app'

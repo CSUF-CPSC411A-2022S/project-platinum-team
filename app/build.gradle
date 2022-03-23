@@ -3,11 +3,14 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+apply plugin: 'androidx.navigation.safeargs'
+
+
 android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.mapapplication"
+        applicationId "com.example.currencyapplication"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -15,6 +18,10 @@ android {
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -33,6 +40,10 @@ android {
 }
 
 dependencies {
+    /** Start of navigation dependencies */
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    /** End of navigation dependencies */
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
