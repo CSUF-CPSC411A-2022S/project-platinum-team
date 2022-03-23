@@ -8,17 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.example.mapapplication.databinding.FragmentCurrenciesBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [currencies.newInstance] factory method to
- * create an instance of this fragment.
- */
-class currencies : Fragment() {
+class Currencies : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +19,8 @@ class currencies : Fragment() {
         val Currencies = resources.getStringArray(R.array.Currencies)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, Currencies)
         binding.currencyFrom.setAdapter(arrayAdapter)
+        binding.currencyTo.setAdapter(arrayAdapter)
+
         return binding.root
     }
 
