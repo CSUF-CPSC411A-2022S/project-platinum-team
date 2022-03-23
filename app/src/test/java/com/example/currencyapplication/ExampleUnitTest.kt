@@ -1,4 +1,4 @@
-package com.example.mapapplication
+package com.example.currencyapplication
 
 import org.junit.Test
 
