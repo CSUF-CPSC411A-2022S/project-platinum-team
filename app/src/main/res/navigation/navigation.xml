@@ -3,10 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/currencies">
-
+    app:startDestination="@id/home2">
     <fragment
-        android:id="@+id/currencies"
+        android:id="@+id/home2"
+        android:name="com.example.currencyapplication.home"
+        android:label="home"
+        tools:layout="@layout/home" >
+        <action
+            android:id="@+id/action_home2_to_currencies3"
+            app:destination="@id/currencies3" />
+    </fragment>
+    <fragment
+        android:id="@+id/currencies3"
         android:name="com.example.currencyapplication.Currencies"
         android:label="fragment_currencies"
         tools:layout="@layout/fragment_currencies" />
