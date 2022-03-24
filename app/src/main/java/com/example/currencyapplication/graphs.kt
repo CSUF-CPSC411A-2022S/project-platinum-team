@@ -1,4 +1,4 @@
-package com.example.mapapplication
+package com.example.currencyapplication
 
 import android.content.Context
 import io.data2viz.charts.chart.Chart
