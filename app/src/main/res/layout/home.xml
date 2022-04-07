@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/home"
+    android:id="@+id/Home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".home">
@@ -15,12 +15,15 @@
 
 
     <Button
-        android:id="@+id/Currencybutton"
+        android:id="@+id/CurrencyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
         android:layout_marginTop="248dp"
+        android:layout_marginEnd="32dp"
         android:text="Currency"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,10 +32,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="179dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="175dp"
+        android:layout_marginBottom="160dp"
         android:text="Welcome to the Currency Converter"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/CurrencyButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="56dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
