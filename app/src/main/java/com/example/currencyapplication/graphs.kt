@@ -14,14 +14,14 @@ class Graph(context: Context) : VizContainerView(context) {
 
  private val chart: Chart<PopCount> = chart(canPop) {
   size = Size(vizSize, vizSize)
-  title = "Population of Canada 1851–2001 (Statistics Canada)"
+  title = "Live Currency Rate of Russian Rubles "
 
   // Create a discrete dimension for the year of the census
   val year = discrete({ domain.year })
 
   // Create a continuous numeric dimension for the population
   val population = quantitative({ domain.population }) {
-   name = "Population of Canada (in millions)"
+   name = "In relation with U.S dollars"
   }
 
   // Using a discrete dimension for the X-axis and a continuous one for the Y-axis

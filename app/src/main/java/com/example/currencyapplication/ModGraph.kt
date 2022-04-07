@@ -21,7 +21,9 @@ class ModGraph : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
+        Graph(requireActivity().getApplicationContext())
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.modgraph, container, false)
     }
