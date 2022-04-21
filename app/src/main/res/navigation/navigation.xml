@@ -2,13 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation">
+    android:id="@+id/navigation"
+    app:startDestination="@id/graphOptions">
 
     <fragment
         android:id="@+id/currencies"
         android:name="com.example.currencyapplication.Currencies"
         android:label="fragment_currencies"
-        tools:layout="@layout/fragment_currencies" >
+        tools:layout="@layout/fragment_currencies">
         <action
             android:id="@+id/action_currencies_to_modGraph"
             app:destination="@id/modGraph" />
@@ -17,4 +18,8 @@
         android:id="@+id/modGraph"
         android:name="com.example.currencyapplication.ModGraph"
         android:label="ModGraph" />
+    <fragment
+        android:id="@+id/graphOptions"
+        android:name="com.example.currencyapplication.GraphOptions"
+        android:label="GraphOptions" />
 </navigation>

@@ -23,9 +23,11 @@ class ModGraph : Fragment() {
         savedInstanceState: Bundle?
 
     ): View? {
-        Graph(requireActivity().getApplicationContext())
+        var g = Graph(requireContext())
+        return g.rootView
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.modgraph, container, false)
+
+        //return inflater.inflate(R.layout.modgraph, container, false)
     }
 
 
