@@ -18,4 +18,8 @@
         android:name="com.example.currencyapplication.Currencies"
         android:label="fragment_currencies"
         tools:layout="@layout/fragment_currencies" />
+    <fragment
+        android:id="@+id/conversionHistory"
+        android:name="com.example.mapapplication.ConversionHistory"
+        android:label="ConversionHistory" />
 </navigation>
