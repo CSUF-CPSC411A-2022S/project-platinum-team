@@ -17,7 +17,19 @@
         android:id="@+id/currencies"
         android:name="com.example.currencyapplication.Currencies"
         android:label="fragment_currencies"
-        tools:layout="@layout/fragment_currencies" />
+        tools:layout="@layout/fragment_currencies">
+        <action
+            android:id="@+id/action_currencies_to_modGraph"
+            app:destination="@id/modGraph" />
+    </fragment>
+    <fragment
+        android:id="@+id/modGraph"
+        android:name="com.example.currencyapplication.ModGraph"
+        android:label="ModGraph" />
+    <fragment
+        android:id="@+id/graphOptions"
+        android:name="com.example.currencyapplication.GraphOptions"
+        android:label="GraphOptions" />
     <fragment
         android:id="@+id/conversionHistory"
         android:name="com.example.mapapplication.ConversionHistory"

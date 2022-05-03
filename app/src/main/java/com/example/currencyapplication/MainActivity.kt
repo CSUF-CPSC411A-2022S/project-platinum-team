@@ -28,4 +28,8 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.nav_host)
         return navController.navigateUp()
     }
+   /*override fun onCreate(savedInstanceState: Bundle?) {
+       super.onCreate(savedInstanceState)
+       setContentView(Graph(this))
+   }*/
 }
