@@ -8,6 +8,12 @@
         <item>EUR (Euros)</item>
         <item>JPY (Japan Yen)</item>
         <item>RUB (Russia Rouble)</item>
+        <item>AUD (Australia Dollar)</item>
+        <item>AFN (Afghanistan Afghani)</item>
+        <item>TRY (Turkish New Lira)</item>
+        <item>GBP (Great Britain Pound)</item>
+
+
     </string-array>
 
 </resources>

@@ -9,11 +9,7 @@
         android:id="@+id/currencies"
         android:name="com.example.currencyapplication.Currencies"
         android:label="fragment_currencies"
-        tools:layout="@layout/fragment_currencies">
-        <action
-            android:id="@+id/action_currencies_to_modGraph"
-            app:destination="@id/modGraph" />
-    </fragment>
+        tools:layout="@layout/fragment_currencies"/>
     <fragment
         android:id="@+id/modGraph"
         android:name="com.example.currencyapplication.ModGraph"
@@ -21,5 +17,9 @@
     <fragment
         android:id="@+id/graphOptions"
         android:name="com.example.currencyapplication.GraphOptions"
-        android:label="GraphOptions" />
+        android:label="GraphOptions" >
+        <action
+            android:id="@+id/action_graphOptions_to_modGraph"
+            app:destination="@id/modGraph" />
+    </fragment>
 </navigation>

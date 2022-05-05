@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.navigation.findNavController
 import com.example.currencyapplication.databinding.FragmentGraphOptionsBinding
 
 
@@ -30,6 +31,11 @@ class GraphOptions : Fragment() {
         val pick = resources.getStringArray(R.array.Currency)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, pick)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
+
+        binding.viewgraph.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_graphOptions_to_modGraph)
+        }
 
         return binding.root
 
