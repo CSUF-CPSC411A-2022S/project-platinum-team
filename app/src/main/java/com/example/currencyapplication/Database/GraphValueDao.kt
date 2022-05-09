@@ -19,7 +19,7 @@ interface GraphValueDao {
     fun get(key: Long): LiveData<GraphValue>?
 
     @Query("SELECT * from GraphValue_table ORDER BY Graph_id DESC")
-    fun getAllProfiles(): LiveData<List<GraphValue>>
+    fun getAllGraphValue(): LiveData<List<GraphValue>>
 
     // Custom query for deleting all entities on a table in the database
     // We use suspend to run the function asynchronously (coroutine).

@@ -3,13 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/graphOptions">
-
+    app:startDestination="@id/Home">
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.example.currencyapplication.home"
+        android:label="home"
+        tools:layout="@layout/home" >
+        <action
+            android:id="@+id/action_Home_to_currencies"
+            app:destination="@id/currencies" />
+    </fragment>
     <fragment
         android:id="@+id/currencies"
         android:name="com.example.currencyapplication.Currencies"
         android:label="fragment_currencies"
-        tools:layout="@layout/fragment_currencies"/>
+        tools:layout="@layout/fragment_currencies">
+        <action
+            android:id="@+id/action_currencies_to_graphOptions"
+            app:destination="@id/graphOptions" />
+    </fragment>
     <fragment
         android:id="@+id/modGraph"
         android:name="com.example.currencyapplication.ModGraph"
@@ -22,4 +34,8 @@
             android:id="@+id/action_graphOptions_to_modGraph"
             app:destination="@id/modGraph" />
     </fragment>
+    <fragment
+        android:id="@+id/conversionHistory"
+        android:name="com.example.mapapplication.ConversionHistory"
+        android:label="ConversionHistory" />
 </navigation>
