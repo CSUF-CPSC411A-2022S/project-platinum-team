@@ -20,6 +20,10 @@ class home : Fragment() {
             view.findNavController().navigate(R.id.action_Home_to_currencies)
         }
 
+        binding.apiConversionButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_Home_to_liveConversion)
+        }
+
 
         return binding.root
     }

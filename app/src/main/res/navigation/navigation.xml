@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_Home_to_currencies"
             app:destination="@id/currencies" />
+        <action
+            android:id="@+id/action_Home_to_liveConversion"
+            app:destination="@id/liveConversion" />
     </fragment>
     <fragment
         android:id="@+id/currencies"
@@ -21,9 +24,7 @@
         <action
             android:id="@+id/action_currencies_to_modGraph"
             app:destination="@id/modGraph" />
-        <action
-            android:id="@+id/action_currencies_to_liveConversion"
-            app:destination="@id/liveConversion" />
+
     </fragment>
     <fragment
         android:id="@+id/modGraph"
