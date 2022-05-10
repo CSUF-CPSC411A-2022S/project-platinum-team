@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_currencies_to_modGraph"
             app:destination="@id/modGraph" />
+        <action
+            android:id="@+id/action_currencies_to_liveConversion"
+            app:destination="@id/liveConversion" />
     </fragment>
     <fragment
         android:id="@+id/modGraph"
@@ -34,4 +37,9 @@
         android:id="@+id/conversionHistory"
         android:name="com.example.mapapplication.ConversionHistory"
         android:label="ConversionHistory" />
+    <fragment
+        android:id="@+id/liveConversion"
+        android:name="com.example.currencyapplication.LiveConversion"
+        android:label="fragment_live_conversion"
+        tools:layout="@layout/fragment_live_conversion" />
 </navigation>
