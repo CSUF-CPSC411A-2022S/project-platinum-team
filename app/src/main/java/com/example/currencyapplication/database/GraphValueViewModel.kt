@@ -5,8 +5,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.viewModelScope
-import com.example.currencyapplication.Database.GraphValueDao
 import com.example.currencyapplication.database.GraphValue
+import com.example.currencyapplication.database.GraphValueDao
 import kotlinx.coroutines.launch
 
 class GraphValueViewModel(
