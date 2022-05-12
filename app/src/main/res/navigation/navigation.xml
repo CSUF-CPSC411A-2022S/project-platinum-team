@@ -15,25 +15,28 @@
         <action
             android:id="@+id/action_Home_to_liveConversion"
             app:destination="@id/liveConversion" />
+        <action
+            android:id="@+id/action_Home_to_graphOptions"
+            app:destination="@id/graphOptions" />
     </fragment>
     <fragment
         android:id="@+id/currencies"
         android:name="com.example.currencyapplication.Currencies"
         android:label=""
         tools:layout="@layout/fragment_currencies">
-        <action
-            android:id="@+id/action_currencies_to_modGraph"
-            app:destination="@id/modGraph" />
-
     </fragment>
     <fragment
         android:id="@+id/modGraph"
         android:name="com.example.currencyapplication.ModGraph"
-        android:label="ModGraph" />
+        android:label="Mod Graph" />
     <fragment
         android:id="@+id/graphOptions"
         android:name="com.example.currencyapplication.GraphOptions"
-        android:label="GraphOptions" />
+        android:label="Graph Options" >
+        <action
+            android:id="@+id/action_graphOptions_to_modGraph"
+            app:destination="@id/modGraph" />
+    </fragment>
     <fragment
         android:id="@+id/conversionHistory"
         android:name="com.example.mapapplication.ConversionHistory"
@@ -41,6 +44,6 @@
     <fragment
         android:id="@+id/liveConversion"
         android:name="com.example.currencyapplication.LiveConversion"
-        android:label="fragment_live_conversion"
+        android:label="Convert Any Currency"
         tools:layout="@layout/fragment_live_conversion" />
 </navigation>
