@@ -1,13 +1,10 @@
 package com.example.currencyapplication.conversion
 
 import android.util.Log
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.currencyapplication.R
-import com.example.currencyapplication.databinding.FragmentCurrenciesBinding
 import com.example.currencyapplication.services.ExchangeAPI
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -47,7 +44,8 @@ class ConversionViewModel: ViewModel() {
             ExchangeAPI.Exchange.Api.retrofitService.getConversion(to, from, amount).enqueue(
                 object : Callback, retrofit2.Callback<GetConversionResponse> {
                     override fun onResponse(call: Call<GetConversionResponse>, response: Response<GetConversionResponse>) {
-                        _result.value = response.body()?.result?.toBigDecimal()?.toPlainString()
+                        val formatted = "%.2f".format(response.body()?.result)
+                        _result.value = formatted
                         _fromSymbol.value = response.body()?.query?.from
                         _toSymbol.value = response.body()?.query?.to
                     }
