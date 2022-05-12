@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.Observer
-import com.example.currencyapplication.Database.GraphValueDatabase
 import com.example.currencyapplication.R
 import com.example.currencyapplication.database.GraphValue
+import com.example.currencyapplication.database.GraphValueDatabase
+import com.example.currencyapplication.database.GraphValueViewModel
+import com.example.currencyapplication.database.GraphValueViewModelFactory
 import com.example.currencyapplication.databinding.ModgraphBinding
 
 
@@ -30,7 +32,7 @@ class ModGraph : Fragment() {
 
     ): View? {
         var g = Graph(requireContext())
-        return g.rootView
+
         // Inflate the layout for this fragment
         val binding: ModgraphBinding =
             DataBindingUtil.inflate(inflater, R.layout.modgraph, container, false)
@@ -55,6 +57,7 @@ class ModGraph : Fragment() {
         binding.lifecycleOwner = this
 
         return binding.root
+        return g.rootView
 
     }
 

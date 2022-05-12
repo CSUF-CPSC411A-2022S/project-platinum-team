@@ -1,4 +1,4 @@
-package com.example.currencyapplication
+package com.example.currencyapplication.database
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

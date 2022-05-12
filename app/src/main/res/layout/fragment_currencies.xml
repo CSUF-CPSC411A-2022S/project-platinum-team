@@ -1,105 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Currencies">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="164dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <data>
+        <variable
+            name = "graphValue"
+            type = "com.example.currencyapplication.GraphValueViewModel" />
 
-        <AutoCompleteTextView
-            android:id="@+id/currencyFrom"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Currency From"
-            android:inputType="none"
-            android:text="USD" />
-    </com.google.android.material.textfield.TextInputLayout>
+    </data>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        tools:context=".Currencies">
 
-        <AutoCompleteTextView
-            android:id="@+id/currencyTo"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="164dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/currencyFrom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Currency From"
+                android:inputType="none"
+                android:text="USD" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:hint="Currency To"
-            android:inputType="none"
-            android:text="Euro" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginEnd="145dp"
-        android:layout_marginBottom="24dp"
-        android:text="Currency Converter"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <AutoCompleteTextView
+                android:id="@+id/currencyTo"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:hint="Currency To"
+                android:inputType="none"
+                android:text="Euro" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        android:layout_width="128dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="408dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="145dp"
+            android:layout_marginEnd="145dp"
+            android:layout_marginBottom="24dp"
+            android:text="Currency Converter"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <AutoCompleteTextView
-            android:id="@+id/amount"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
             android:layout_width="128dp"
-            android:layout_height="43dp"
-            android:layout_weight="1"
-            android:background="@color/main_green"
-            android:inputType="numberDecimal"
-            android:text="Amount"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:typeface="sans" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="42dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="408dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/convertButton"
-        android:layout_width="113dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="313dp"
-        android:text="Convert"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+            <AutoCompleteTextView
+                android:id="@+id/amount"
+                android:layout_width="128dp"
+                android:layout_height="43dp"
+                android:layout_weight="1"
+                android:background="@color/main_green"
+                android:inputType="numberDecimal"
+                android:text="Amount"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:typeface="sans" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/convertButton"
+            android:layout_width="113dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="158dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginEnd="159dp"
+            android:layout_marginBottom="313dp"
+            android:text="Convert"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
