@@ -35,18 +35,23 @@ class ConversionViewModel: ViewModel() {
         }
 
     fun getConversion(to: String, from: String, amount: String) {
-        Log.d(to,"to")
-        Log.d(from,"from")
-        Log.d(amount,"amount")
+//        Log.d(to,"to")
+//        Log.d(from,"from")
+//        Log.d(amount,"amount")
 
         // Run API request as a coroutine to not block the application.
         viewModelScope.launch {
             ExchangeAPI.Exchange.Api.retrofitService.getConversion(to, from, amount).enqueue(
                 object : Callback, retrofit2.Callback<GetConversionResponse> {
                     override fun onResponse(call: Call<GetConversionResponse>, response: Response<GetConversionResponse>) {
-                        _result.value = "%.2f".format(response.body()?.result)
-                        _fromSymbol.value = response.body()?.query?.from
-                        _toSymbol.value = response.body()?.query?.to
+                        if (response.body()?.success == true) {
+                            _result.value = "%.2f".format(response.body()?.result)
+                            _fromSymbol.value = response.body()?.query?.from
+                            _toSymbol.value = response.body()?.query?.to
+                        }
+                        else {
+                            _result.value = "Something went wrong, make sure the symbols you use are valid :3"
+                        }
                     }
                     override fun onFailure(call: Call<GetConversionResponse>, t: Throwable) {
                         _result.value = "Failure ${t.message}"
