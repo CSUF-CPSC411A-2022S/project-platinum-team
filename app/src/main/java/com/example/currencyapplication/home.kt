@@ -14,7 +14,7 @@ class home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = HomeBinding.inflate(layoutInflater)
+        val binding  = HomeBinding.inflate(layoutInflater)
 
         binding.CurrencyButton.setOnClickListener() { view: View ->
             view.findNavController().navigate(R.id.action_Home_to_currencies)
