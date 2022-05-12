@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 /**
- * Manages the database that stores the Intersection table and its entitites.
+ * Manages the databases that stores the Intersection table and its entitites.
  * The abstract class should inherit RoomDatabase()
  */
 @Database(entities = [History::class], version = 1, exportSchema = false)
@@ -15,13 +15,13 @@ abstract class HistoryDatabase: RoomDatabase() {
     abstract val historyDao: HistoryDao
 
     companion object {
-        // Holds a reference to the database.
+        // Holds a reference to the databases.
         @Volatile
         private var INSTANCE: HistoryDatabase? = null // This class
 
-        // Retrieve an instance of the database tied to the context (your application).
+        // Retrieve an instance of the databases tied to the context (your application).
         fun getInstance(context: Context): HistoryDatabase {
-            // Multiple threads can ask for the database at the same time, ensure we only initialize
+            // Multiple threads can ask for the databases at the same time, ensure we only initialize
             // it once by using synchronized. Only one thread may enter a synchronized block at a
             // time.
             synchronized(this) {
@@ -31,19 +31,19 @@ abstract class HistoryDatabase: RoomDatabase() {
                 var instance = INSTANCE
 
                 // The first time the method is called, instance will be `null`, so we should create
-                // a new database instance. The next time it is called, the database instance
+                // a new databases instance. The next time it is called, the databases instance
                 // already exists and does not need to be recreated.
                 if (instance == null) {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
-                        HistoryDatabase::class.java, // Your database class
+                        HistoryDatabase::class.java, // Your databases class
                         "sleep_history_database"
                     )
                         .fallbackToDestructiveMigration()
                         .build()
                     INSTANCE = instance
                 }
-                // Return database instance; smart cast to be non-null.
+                // Return databases instance; smart cast to be non-null.
                 return instance
             }
         }

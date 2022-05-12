@@ -1,11 +1,11 @@
-package com.example.currencyapplication
+package com.example.currencyapplication.database
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.viewModelScope
-import com.example.currencyapplication.Database.GraphValueDao
+import com.example.currencyapplication.database.GraphValueDao
 import com.example.currencyapplication.database.GraphValue
 import kotlinx.coroutines.launch
 
@@ -19,7 +19,7 @@ class GraphValueViewModel(
     var yen = MutableLiveData("")
     var rup = MutableLiveData("")
 
-    // Retrieves all Intersection objects from the database
+    // Retrieves all Intersection objects from the databases
     // Represented as a LiveData<List<Intersection>>
     val graphValueList = database.getAllGraphValue()
 
@@ -42,7 +42,7 @@ class GraphValueViewModel(
     }
 
     /**
-     * Inserts the Intersection object into the database.
+     * Inserts the Intersection object into the databases.
      */
     fun insert() {
         // Launch coroutines in the viewModelScope so that the coroutines are automatically
@@ -86,7 +86,7 @@ class GraphValueViewModel(
             graphValue7.rup = 76.953
             graphValue7.yen = 130.5373
 
-            // Insert data to the database using the insert coroutine.
+            // Insert data to the databases using the insert coroutine.
             database.insert(graphValue)
             database.insert(graphValue2)
             database.insert(graphValue3)
@@ -100,13 +100,13 @@ class GraphValueViewModel(
     }
 
     /**
-     * Deletes all Intersection entities in the database.
+     * Deletes all Intersection entities in the databases.
      */
     fun clear() {
         // Launch coroutines in the viewModelScope so that the coroutines are automatically
         // canceled when the ViewModel is destroyed.
         viewModelScope.launch {
-            // Delete data from the database using the clear coroutine.
+            // Delete data from the databases using the clear coroutine.
             database.clear()
         }
     }

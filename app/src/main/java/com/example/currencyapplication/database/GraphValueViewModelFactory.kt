@@ -1,9 +1,8 @@
-package com.example.currencyapplication
+package com.example.currencyapplication.database
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.currencyapplication.Database.GraphValueDao
 
 
 class GraphValueViewModelFactory (
