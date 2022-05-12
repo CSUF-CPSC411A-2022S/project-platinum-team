@@ -21,10 +21,15 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+//
+//    buildFeatures {
+//        viewBinding = true
+//    }
 
     buildFeatures {
-        viewBinding = true
+        dataBinding = true
     }
+
 
     buildTypes {
         release {
@@ -53,6 +58,15 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
     /** End of navigation dependencies */
+
+
+    // Required dependencies for retrofit
+    //implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
+    //implementation "com.squareup.retrofit2:converter-scalars:$version_retrofit"
+
+    // Required dependencies for moshi
+    implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
+    implementation "com.squareup.retrofit2:converter-moshi:$version_retrofit"
 
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
