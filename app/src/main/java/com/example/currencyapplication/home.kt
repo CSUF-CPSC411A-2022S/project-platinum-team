@@ -24,6 +24,9 @@ class home : Fragment() {
             view.findNavController().navigate(R.id.action_Home_to_liveConversion)
         }
 
+        binding.GraphButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_Home_to_graphOptions)
+        }
 
         return binding.root
     }
