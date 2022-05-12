@@ -1,5 +1,7 @@
 package com.example.currencyapplication.services
 
+import com.example.currencyapplication.conversion.GetConversionResponse
+import com.example.currencyapplication.conversion.GetSymbolsResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Call
@@ -48,22 +50,21 @@ class ExchangeAPI {
              * @param token access token
              * @return Place object built from the API data
              */
-//            @Headers(
-//                "apikey: L0H9j44R3Nlx0H4HJIViz9dWg2qYz5lW"
-//            )
-//            @GET("convert?to={to}&from={from}&amount={amount}")
-//            fun getPlaces(@Path(value = "to") to: String,
-//                          @Path(value = "from") from: String,
-//                          @Path(value = "amount") amount: Int):
-//                    Call<Place>
-//
-//            @Headers(
-//                "apikey: L0H9j44R3Nlx0H4HJIViz9dWg2qYz5lW"
-//            )
-//            @GET("symbols")
-//            fun getSymbols(@Path(value = "search_string") search: String,
-//                          @Query("access_token") token: String = ACCESS_TOKEN):
-//                    Call<Place>
+            @Headers(
+                "apikey: L0H9j44R3Nlx0H4HJIViz9dWg2qYz5lW"
+            )
+            @GET("convert")
+            fun getConversion(@Query(value = "to") to: String,
+                              @Query(value = "from") from: String,
+                              @Query(value = "amount") amount: String):
+                    Call<GetConversionResponse>
+
+            @Headers(
+                "apikey: L0H9j44R3Nlx0H4HJIViz9dWg2qYz5lW"
+            )
+            @GET("symbols")
+            fun getSymbols():
+                    Call<GetSymbolsResponse>
         }
 
 
