@@ -3,15 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/currencies">
-
+    app:startDestination="@id/Home">
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.example.currencyapplication.home"
+        android:label="Home"
+        tools:layout="@layout/home" >
+        <action
+            android:id="@+id/action_Home_to_currencies"
+            app:destination="@id/currencies" />
+        <action
+            android:id="@+id/action_Home_to_liveConversion"
+            app:destination="@id/liveConversion" />
+    </fragment>
     <fragment
         android:id="@+id/currencies"
         android:name="com.example.currencyapplication.Currencies"
-        android:label="fragment_currencies"
-        tools:layout="@layout/fragment_currencies" />
+        android:label=""
+        tools:layout="@layout/fragment_currencies">
+        <action
+            android:id="@+id/action_currencies_to_modGraph"
+            app:destination="@id/modGraph" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/modGraph"
+        android:name="com.example.currencyapplication.ModGraph"
+        android:label="ModGraph" />
+    <fragment
+        android:id="@+id/graphOptions"
+        android:name="com.example.currencyapplication.GraphOptions"
+        android:label="GraphOptions" />
     <fragment
         android:id="@+id/conversionHistory"
         android:name="com.example.mapapplication.ConversionHistory"
         android:label="ConversionHistory" />
+    <fragment
+        android:id="@+id/liveConversion"
+        android:name="com.example.currencyapplication.LiveConversion"
+        android:label="fragment_live_conversion"
+        tools:layout="@layout/fragment_live_conversion" />
 </navigation>

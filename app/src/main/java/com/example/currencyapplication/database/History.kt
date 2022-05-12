@@ -16,8 +16,7 @@ data class History(
     @ColumnInfo()
     var date: String = "",
 
-    @ColumnInfo()
-    var rates: () -> Unit = {}
-
+//    @ColumnInfo()
+//    var rates: () -> Unit = {}
 
 )

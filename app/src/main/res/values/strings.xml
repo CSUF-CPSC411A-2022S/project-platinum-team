@@ -1,6 +1,21 @@
 <resources>
-    <string name="app_name">Map Application</string>
+    <string name="app_name">Currency Converter</string>
+    <string-array name="Currencies">
+        <item>USD</item>
+        <item>MXN</item>
+        <item>EUR</item>
+        <item>CNY</item>
+        <item>BTC</item>
+        <item>CAD</item>
+        <item>RUB</item>
+        <item>PHP</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="successful_navigation">Successful navigation</string>
+    <string name="successful_navigation" />
+    <string-array name="Currency">
+        <item>EUR (Euros)</item>
+        <item>JPY (Japan Yen)</item>
+        <item>RUB (Russia Rouble)</item>
+    </string-array>
 </resources>

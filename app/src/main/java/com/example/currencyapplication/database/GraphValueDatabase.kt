@@ -5,22 +5,18 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-/**
- * Manages the databases that stores the Intersection table and its entitites.
- * The abstract class should inherit RoomDatabase()
- */
-@Database(entities = [History::class], version = 1, exportSchema = false)
-abstract class HistoryDatabase: RoomDatabase() {
-    // Data access object for the entity.
-    abstract val historyDao: HistoryDao
 
+@Database(entities = [GraphValue::class], version = 1, exportSchema = false)
+abstract class GraphValueDatabase : RoomDatabase(){
+
+    abstract val graphValueDao: GraphValueDao
     companion object {
         // Holds a reference to the databases.
         @Volatile
-        private var INSTANCE: HistoryDatabase? = null // This class
+        private var INSTANCE: GraphValueDatabase? = null // This class
 
         // Retrieve an instance of the databases tied to the context (your application).
-        fun getInstance(context: Context): HistoryDatabase {
+        fun getInstance(context: Context): GraphValueDatabase {
             // Multiple threads can ask for the databases at the same time, ensure we only initialize
             // it once by using synchronized. Only one thread may enter a synchronized block at a
             // time.
@@ -36,7 +32,7 @@ abstract class HistoryDatabase: RoomDatabase() {
                 if (instance == null) {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
-                        HistoryDatabase::class.java, // Your databases class
+                        GraphValueDatabase::class.java, // Your databases class
                         "sleep_history_database"
                     )
                         .fallbackToDestructiveMigration()
