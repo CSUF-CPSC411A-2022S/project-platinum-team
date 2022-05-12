@@ -44,8 +44,7 @@ class ConversionViewModel: ViewModel() {
             ExchangeAPI.Exchange.Api.retrofitService.getConversion(to, from, amount).enqueue(
                 object : Callback, retrofit2.Callback<GetConversionResponse> {
                     override fun onResponse(call: Call<GetConversionResponse>, response: Response<GetConversionResponse>) {
-                        val formatted = "%.2f".format(response.body()?.result)
-                        _result.value = formatted
+                        _result.value = "%.2f".format(response.body()?.result)
                         _fromSymbol.value = response.body()?.query?.from
                         _toSymbol.value = response.body()?.query?.to
                     }
