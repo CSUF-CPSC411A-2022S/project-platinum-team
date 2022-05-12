@@ -12,15 +12,16 @@
         <action
             android:id="@+id/action_Home_to_currencies"
             app:destination="@id/currencies" />
+        <action
+            android:id="@+id/action_Home_to_graphOptions"
+            app:destination="@id/graphOptions" />
     </fragment>
     <fragment
         android:id="@+id/currencies"
         android:name="com.example.currencyapplication.Currencies"
         android:label="fragment_currencies"
         tools:layout="@layout/fragment_currencies">
-        <action
-            android:id="@+id/action_currencies_to_graphOptions"
-            app:destination="@id/graphOptions" />
+
     </fragment>
     <fragment
         android:id="@+id/modGraph"
