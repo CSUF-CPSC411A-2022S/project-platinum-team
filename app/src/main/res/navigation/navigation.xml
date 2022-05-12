@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/Home"
         android:name="com.example.currencyapplication.home"
-        android:label="home"
+        android:label="Home"
         tools:layout="@layout/home" >
         <action
             android:id="@+id/action_Home_to_currencies"
@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/currencies"
         android:name="com.example.currencyapplication.Currencies"
-        android:label="fragment_currencies"
+        android:label=""
         tools:layout="@layout/fragment_currencies">
         <action
             android:id="@+id/action_currencies_to_modGraph"

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.currencyapplication.databinding.ActivityMainBinding
@@ -12,8 +13,8 @@ import com.example.currencyapplication.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+//        val binding: ActivityMainBinding = DataBindingUtil.inflate(layoutInflater)
+        setContentView(R.layout.activity_main)
 
         val navController = this.findNavController(R.id.nav_host)
         NavigationUI.setupActionBarWithNavController(this, navController)
